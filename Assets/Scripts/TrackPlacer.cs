@@ -3,7 +3,8 @@ using UnityEngine;
 public class TrackPlacer : MonoBehaviour
 {
     public GameObject initialSegment;
-
+    [SerializeField] Transform theBestCharacterController;
+    [SerializeField] float distanceToPlaceTrack = 2f;
     EndingAnchor lastSegmentEndAnchor;
 
     private void Awake()
@@ -16,6 +17,12 @@ public class TrackPlacer : MonoBehaviour
 
     public void SpawnTrackPiece(GameObject trackPrefab)
     {
+        if(Vector2.Distance(theBestCharacterController.position, lastSegmentEndAnchor.transform.position) > distanceToPlaceTrack)
+        {
+            Debug.Log("Too far away to place track!");
+            return;
+        }
+
         Spawn(trackPrefab, lastSegmentEndAnchor);
     }
 

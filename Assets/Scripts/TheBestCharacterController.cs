@@ -5,6 +5,7 @@ public class TheBestCharacterController : MonoBehaviour
 {
     public float speed = 1f;
     public float jumpSpeed = 1f;
+    [SerializeField] Transform groundCheck;
 
     public InputAction jumpAction;
 
@@ -22,10 +23,12 @@ public class TheBestCharacterController : MonoBehaviour
         rb.MovePosition(rb.position + (Vector3.right * speed * Time.deltaTime));
 
         if (jumpAction.triggered)
-        {
-            // Must check if we are grounded.
-            rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-            AudioManager.Instance.PlaySound_Jump();
+        {           
+            if (IsGrounded()) // Must check if we are grounded.
+            {
+                rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
+                AudioManager.Instance.PlaySound_Jump();
+            }
         }
 
         CheckIfFalling();
@@ -37,5 +40,11 @@ public class TheBestCharacterController : MonoBehaviour
         {
             AudioManager.Instance.PlaySound_Fall();
         }
+    }
+
+    bool IsGrounded()
+    {
+        Ray groundRay = new Ray(groundCheck.position, Vector3.down);
+        return Physics.Raycast(groundRay, 0.3f);
     }
 }
