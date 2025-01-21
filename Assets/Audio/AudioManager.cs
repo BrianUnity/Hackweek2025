@@ -5,8 +5,11 @@ public class AudioManager : MonoBehaviour
 {
      public AudioSource musicSouce;
      public AudioSource jump;
-   
+     public AudioSource fall;
+     
      public static AudioManager Instance = null;
+     
+     private bool hasFallen = false;
 
      // Initialize the singleton instance.
      private void Awake()
@@ -30,8 +33,17 @@ public class AudioManager : MonoBehaviour
            musicSouce.Play();
        }
 
-       public void PlayJumpSound()
+       public void PlaySound_Jump()
        {
            jump.Play();
+       }
+       
+       public void PlaySound_Fall()
+       {
+           if (!fall.isPlaying && hasFallen == false)
+           {
+               fall.Play();
+               hasFallen = true;
+           }
        }
 }
