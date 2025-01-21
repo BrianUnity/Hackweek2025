@@ -25,6 +25,7 @@ public class TheBestCharacterController : MonoBehaviour
         {
             // Must check if we are grounded.
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
+            AudioManager.Instance.PlayJumpSound();
         }
     }
 }
