@@ -53,6 +53,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1437702437005552718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613597827674657401}
+  m_Layer: 0
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1613597827674657401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437702437005552718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8843375478810416384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4236408888232839640
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +180,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8843375478810416384}
   - component: {fileID: 7995859532683377121}
-  - component: {fileID: 4546130951557194412}
   - component: {fileID: 1306558326496324484}
   m_Layer: 0
   m_Name: Character
@@ -174,6 +204,7 @@ Transform:
   - {fileID: 1132854774934338696}
   - {fileID: 540513540510087492}
   - {fileID: 5068169959126837805}
+  - {fileID: 1613597827674657401}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7995859532683377121
@@ -190,39 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   jumpSpeed: 3
-  groundCheck: {fileID: 0}
-  jumpAction:
-    m_Name: Jump
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: ec2e5d7f-f460-4e08-893b-6c728f3dea67
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 5ba8ef02-bc5f-453f-91e6-a988bab6b228
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &4546130951557194412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8773525714119179895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e7735ddb6d10548ae9f25b563807e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  jumpSpeed: 3
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 1613597827674657401}
   jumpAction:
     m_Name: Jump
     m_Type: 1
