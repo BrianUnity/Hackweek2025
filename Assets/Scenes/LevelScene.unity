@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &84731686 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1292869081540133607, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
+  m_PrefabInstance: {fileID: 1994510085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132768103
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1292869081540133607, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -9000943232440044602, guid: 2fa1bc4d5dc7c4131bc272e43527866f, type: 2}
     - target: {fileID: 1596606949802197389, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
       propertyPath: m_Name
       value: Audio
@@ -778,8 +787,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3359518412822853957, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 84731686}
+    - target: {fileID: 8815586622143863343, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
+      propertyPath: m_Name
+      value: Jump
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8225096364623995578, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6587a158609884b238fb1ec6ab9d76e8, type: 3}
