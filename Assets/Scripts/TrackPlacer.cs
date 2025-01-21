@@ -32,5 +32,7 @@ public class TrackPlacer : MonoBehaviour
 
         newSegment.transform.position = existingSegmentAnchor.transform.position;
         lastSegmentEndAnchor = newSegment.GetComponentInChildren<EndingAnchor>();
+        
+        AudioManager.Instance.PlaySound_PlatformPlace();
     }
 }

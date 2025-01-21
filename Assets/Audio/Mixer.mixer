@@ -19,6 +19,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-8275914456639616012
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: a942de87259d44b69a647e85e8e6695d
+  m_EffectName: Attenuation
+  m_MixLevel: 73127a9a47d074bf4912dcda344a0998
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-7658335101000832091
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -31,6 +45,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -9000943232440044602}
   - {fileID: 5698804956975685039}
+  - {fileID: -6476257979347185702}
   m_Volume: 6657e966810df4fb49f260fe8d1b9841
   m_Pitch: 2ec494e2467f34fad9d524394ad21a21
   m_Send: 00000000000000000000000000000000
@@ -54,6 +69,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6476257979347185702
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlatformPlace
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: ed7f6c1ab9fb04e5abdb095bd6d527d2
+  m_Children: []
+  m_Volume: 0372f7cdad1b746a2a940767e1368139
+  m_Pitch: a01aff03a68fb4dbb940f75e5f002be7
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -8275914456639616012}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-2153438411102663825
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -96,6 +130,7 @@ AudioMixerController:
     - f70122abbc462483a950e15f39ebdb0a
     - 2b10104e5586d4984aa1b12a736f008c
     - d641b72816825463ea7db26bc1ac8c50
+    - ed7f6c1ab9fb04e5abdb095bd6d527d2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -145,6 +180,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 56c83ff7535ac4e80a6ea0a0894e1971
   m_FloatValues:
     3cb2c88b04e3b4941b58fdc231ba9613: -3.8468595
+    0372f7cdad1b746a2a940767e1368139: -6.1337085
     1fc9297e691e944cd85e782d5cd20ec0: -4.1973677
   m_TransitionOverrides: {}
 --- !u!244 &124749335301508423

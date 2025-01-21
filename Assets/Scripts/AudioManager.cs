@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
      public AudioSource musicSouce;
      public AudioSource jump;
      public AudioSource fall;
+     public AudioSource platformPlace;
+
      
      public static AudioManager Instance = null;
      
@@ -45,5 +47,11 @@ public class AudioManager : MonoBehaviour
                fall.Play();
                hasFallen = true;
            }
+       }
+       
+       public void PlaySound_PlatformPlace()
+       {
+           platformPlace.Play();
+           hasFallen = true;
        }
 }

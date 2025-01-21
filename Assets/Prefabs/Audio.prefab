@@ -31,9 +31,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8847844303252893449}
-  - {fileID: 1451861518994445447}
   - {fileID: 6638620824964104344}
   - {fileID: 8894917534561382179}
+  - {fileID: 8443081702892123820}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3359518412822853957
@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSouce: {fileID: 9095951312679640895}
-  jump: {fileID: 3425420901208866192}
+  jump: {fileID: 1292869081540133607}
   fall: {fileID: 8272640065969495447}
-  jumpRandom: {fileID: 1292869081540133607}
+  platformPlace: {fileID: 5213149680072317674}
 --- !u!1 &1673223305409269228
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &8225096364623995578
+--- !u!1 &8804398360540649514
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,43 +318,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1451861518994445447}
-  - component: {fileID: 3425420901208866192}
+  - component: {fileID: 8443081702892123820}
+  - component: {fileID: 5213149680072317674}
   m_Layer: 0
-  m_Name: Jump
+  m_Name: PlatformPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1451861518994445447
+--- !u!4 &8443081702892123820
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225096364623995578}
+  m_GameObject: {fileID: 8804398360540649514}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4025237, y: -0.7615714, z: -1.9516149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610839903165166281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &3425420901208866192
+--- !u!82 &5213149680072317674
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225096364623995578}
+  m_GameObject: {fileID: 8804398360540649514}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -9000943232440044602, guid: 2fa1bc4d5dc7c4131bc272e43527866f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e9f17f8ac8b3c4e1ea664d3d05e24eeb, type: 3}
-  m_Resource: {fileID: 8300000, guid: e9f17f8ac8b3c4e1ea664d3d05e24eeb, type: 3}
-  m_PlayOnAwake: 0
+  OutputAudioMixerGroup: {fileID: -6476257979347185702, guid: 2fa1bc4d5dc7c4131bc272e43527866f, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9cb46bcf24b9b4c80b8e1aa88630317d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9cb46bcf24b9b4c80b8e1aa88630317d, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 8894917534561382179}
   - component: {fileID: 1292869081540133607}
   m_Layer: 0
-  m_Name: JumpRandom
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +480,7 @@ AudioSource:
   m_GameObject: {fileID: 8815586622143863343}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9000943232440044602, guid: 2fa1bc4d5dc7c4131bc272e43527866f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 6418180475301049370, guid: 3df4056dc324d4652973d31da18e8276, type: 2}
   m_PlayOnAwake: 1
