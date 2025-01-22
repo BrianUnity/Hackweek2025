@@ -1,20 +1,26 @@
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TheBestCharacterController : MonoBehaviour
 {
     public float speed = 1f;
     public float jumpSpeed = 1f;
     [SerializeField] Transform groundCheck;
-
+    [SerializeField] PopUp popUp;
     public InputAction jumpAction;
 
     Rigidbody rb;
+    CinemachineImpulseSource impulseSource;
+    Vector3 startPosition;
 
-    private void Awake()
+    void Awake()
     {
+        startPosition = transform.position;
         rb = GetComponent<Rigidbody>();
-
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         jumpAction.Enable();
     }
 
@@ -24,10 +30,13 @@ public class TheBestCharacterController : MonoBehaviour
 
         if (jumpAction.triggered)
         {           
-            if (IsGrounded()) // Must check if we are grounded.
+            if(speed > 0)
             {
-                rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
-                AudioManager.Instance.PlaySound_Jump();
+                if (IsGrounded()) // Must check if we are grounded.
+                {
+                    rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
+                    AudioManager.Instance.PlaySound_Jump();
+                }
             }
         }
 
@@ -46,5 +55,35 @@ public class TheBestCharacterController : MonoBehaviour
     {
         Ray groundRay = new Ray(groundCheck.position, Vector3.down);
         return Physics.Raycast(groundRay, 0.3f);
+    }
+
+    public void Run()
+    {
+        speed = 1;
+    }
+
+    //[ContextMenu("Die")]//For testing purposes
+    void Die()
+    {
+        speed = 0;
+        impulseSource.GenerateImpulse();
+        PopUpData popUpData = new PopUpData();
+        popUpData.messages.Add("You died!");
+        popUpData.messages.Add("GAME OVER");
+        UnityEvent action = new UnityEvent();
+        action.AddListener(() => { SceneManager.LoadScene("Nicolas"); });
+        popUpData.unityEvents.Add(action);
+        popUp.Show(popUpData);
+        //TODO:
+        //AudioManager.Instance.PlaySound_Death(); //Gavin, you can add this line if you want to play a sound when the target dies.
+        //Show a death animation.
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            Die();
+        }
     }
 }
