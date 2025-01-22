@@ -74,7 +74,7 @@ public class TheBestCharacterController : MonoBehaviour
         popUpData.messages.Add("You died!");
         popUpData.messages.Add("GAME OVER");
         UnityEvent action = new UnityEvent();
-        action.AddListener(() => { SceneManager.LoadScene("Nicolas"); });
+        action.AddListener(() => { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
         popUpData.unityEvents.Add(action);
         popUp.Show(popUpData);
         //TODO:
