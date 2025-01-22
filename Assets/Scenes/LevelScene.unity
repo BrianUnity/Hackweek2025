@@ -478,33 +478,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a7d76e75bd2492792c7afbb5973f5c, type: 3}
---- !u!1 &491121166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3354791597853463420, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-  m_PrefabInstance: {fileID: 1453972191}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &491121170
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491121166}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1fd00c8906d6545649103d36b1254470, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &532927098
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,30 +794,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2154666024920658653, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 1c3eadc39f7374db7a5eca14d2f48b21, type: 2}
-    - target: {fileID: 4550876702854537308, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: m_Range
-      value: 27.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550876702854537308, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: m_Intensity
-      value: 1.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550876702854537308, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: m_SpotAngle
-      value: 54.44714
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550876702854537308, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: m_InnerSpotAngle
-      value: 46.443558
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550876702854537308, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      propertyPath: m_BounceIntensity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8773525714119179895, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
       propertyPath: m_Name
       value: Character
@@ -855,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843375478810416384, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8843375478810416384, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
       propertyPath: m_LocalPosition.z
@@ -892,10 +841,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3354791597853463420, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 491121170}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 250a862d79ae50440b455cdea6ab0577, type: 3}
 --- !u!1001 &1660110043
 PrefabInstance:

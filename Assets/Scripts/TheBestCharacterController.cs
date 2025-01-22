@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class TheBestCharacterController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class TheBestCharacterController : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] PopUp popUp;
     public InputAction jumpAction;
-
+    public ParticleSystem jumpParticles;
+    
     Rigidbody rb;
     CinemachineImpulseSource impulseSource;
     Vector3 startPosition;
@@ -36,6 +38,7 @@ public class TheBestCharacterController : MonoBehaviour
                 {
                     rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
                     AudioManager.Instance.PlaySound_Jump();
+                    jumpParticles.Play();
                 }
             }
         }
