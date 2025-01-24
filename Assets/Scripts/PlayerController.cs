@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] CinemachineImpulseSource impulseSource;
     [SerializeField] NewTrackPlacer newTrackPlacer;
+    [SerializeField] ParticleSystem jumpParticles;
 
     GameObject popUp;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("IsSliding", true);
                 characterController.height /= 2;
                 characterController.center = new Vector3(characterController.center.x, characterController.center.y / 2, characterController.center.z);
+                AudioManager.Instance.PlaySound_Jump();
                 Invoke("StopSliding",1f);
             }
 
@@ -51,15 +53,19 @@ public class PlayerController : MonoBehaviour
                 if( ! animator.GetBool("IsSliding"))
                 {
                     verticalVelocity = jumpForce;
+                    jumpParticles.Play();
+                    AudioManager.Instance.PlaySound_Jump();
                 }
             }
         }
         else
         {
             verticalVelocity -= (gravity * Time.deltaTime);
+            //AudioManager.Instance.PlaySound_Fall();
             if (Input.GetKeyDown(KeyCode.S))
             {
                 verticalVelocity = -jumpForce;
+                AudioManager.Instance.PlaySound_Jump();
             }
         }
 
