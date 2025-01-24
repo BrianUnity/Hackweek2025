@@ -13,6 +13,10 @@ public class TheBestCharacterController : MonoBehaviour
     [SerializeField] PopUp popUp;
     public InputAction jumpAction;
     public ParticleSystem jumpParticles;
+    public int maxHeight = 1;
+    public UpperEnemy upperEnemy;
+    Renderer playerRenderer;
+    bool shouldAttackPlayer = false;
     
     Rigidbody rb;
     CinemachineImpulseSource impulseSource;
@@ -22,6 +26,7 @@ public class TheBestCharacterController : MonoBehaviour
     {
         startPosition = transform.position;
         rb = GetComponent<Rigidbody>();
+        playerRenderer = GetComponentInChildren<Renderer>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         jumpAction.Enable();
     }
@@ -44,6 +49,7 @@ public class TheBestCharacterController : MonoBehaviour
         }
 
         CheckIfFalling();
+        CheckIfTooHigh();
     }
 
     void CheckIfFalling()
@@ -63,6 +69,7 @@ public class TheBestCharacterController : MonoBehaviour
     public void Run()
     {
         speed = 1;
+        playerRenderer.enabled=true;
     }
 
     //[ContextMenu("Die")]//For testing purposes
@@ -80,13 +87,32 @@ public class TheBestCharacterController : MonoBehaviour
         //TODO:
         //AudioManager.Instance.PlaySound_Death(); //Gavin, you can add this line if you want to play a sound when the target dies.
         //Show a death animation.
+        
+        upperEnemy.ShouldAttackPlayer(false);
+        playerRenderer.enabled=false;
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Death"))
         {
+            playerRenderer.enabled = false;
+            upperEnemy.ShouldAttackPlayer(false);
+            
+            var enemyRenderer = collision.gameObject.GetComponent<Renderer>();
+            enemyRenderer.enabled = false;
+                
             Die();
         }
+    }
+
+    void CheckIfTooHigh()
+    {
+         if (rb.transform.position.y >= maxHeight )
+         {
+             shouldAttackPlayer = true;
+             upperEnemy.ShouldAttackPlayer(shouldAttackPlayer);
+         }
     }
 }
