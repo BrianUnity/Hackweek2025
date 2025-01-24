@@ -10,7 +10,7 @@ public class TrackPlacer : MonoBehaviour
     private void Awake()
     {
         if (initialSegment == null)
-            Debug.LogError("Have not set initialSegment!");
+            Debug.LogError("Have not set initialTrack!");
 
         lastSegmentEndAnchor = initialSegment.GetComponentInChildren<EndingAnchor>(); // We have the initial segment at 0.
     }

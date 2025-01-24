@@ -10,7 +10,7 @@ public class SpawnObjectRepeat : MonoBehaviour
     private void Awake()
     {
         if (firstObject == null)
-            Debug.LogError("Have not set initialSegment!");
+            Debug.LogError("Have not set initialTrack!");
 
         lastSegmentEndAnchor = firstObject.GetComponentInChildren<EndingAnchor>(); // We have the initial segment at 0.
     }

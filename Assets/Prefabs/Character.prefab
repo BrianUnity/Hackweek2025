@@ -5055,9 +5055,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  lane: 0
+  minLane: -1
+  maxLane: 1
   jumpSpeed: 3
   groundCheck: {fileID: 1613597827674657401}
   popUp: {fileID: 0}
+  leftAction:
+    m_Name: Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 30849271-2aa0-486b-a4f9-3ccd68c47f4a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 347c8b89-ccc5-4081-b5b2-34abc8654f87
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left
+      m_Flags: 0
+    m_Flags: 0
+  rightAction:
+    m_Name: Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 34b24b1c-c6f8-4ea0-825f-9acea0be429b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 51eab760-b031-4c4c-9631-f47379bb3cb8
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right
+      m_Flags: 0
+    m_Flags: 0
   jumpAction:
     m_Name: Jump
     m_Type: 1
@@ -5068,7 +5105,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 5ba8ef02-bc5f-453f-91e6-a988bab6b228
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -5076,6 +5113,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   jumpParticles: {fileID: 5926435995459348125}
+  maxHeight: 1
 --- !u!54 &1306558326496324484
 Rigidbody:
   m_ObjectHideFlags: 0
