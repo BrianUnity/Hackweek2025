@@ -21,7 +21,7 @@ public class SpawnObstacles : MonoBehaviour
     
     void Spawn()
     {
-        obstaclePosition = new Vector3(obstaclePosition.x + Random.Range(2,6), Random.Range(0.2f,1.5f), Random.Range(0,-1));
+        obstaclePosition = new Vector3(obstaclePosition.x + Random.Range(20,24), Random.Range(-5.0f,5.0f), Random.Range(-0.75f,0.75f));
         
         GameObject newObstacle = Object.Instantiate(obstaclePrefab);
         newObstacle.transform.position = obstaclePosition;
