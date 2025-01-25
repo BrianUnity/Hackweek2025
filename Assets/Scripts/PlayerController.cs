@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Transform groundCheck;
     [SerializeField] CinemachineImpulseSource impulseSource;
-    [SerializeField] NewTrackPlacer newTrackPlacer;
     [SerializeField] ParticleSystem jumpParticles;
 
     GameObject popUp;
@@ -111,15 +110,6 @@ public class PlayerController : MonoBehaviour
         if (hit.gameObject.CompareTag("Death"))
         {
             Die();
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Stop"))
-        {
-            Speed = 0;
-            newTrackPlacer.SpawnRandomTracks(true);
         }
     }
 }
